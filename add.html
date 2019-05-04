@@ -1,0 +1,93 @@
+<html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>SPLIT WISE </title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+
+<div class="container">
+
+<br>
+<h1 class="text-centre"> TRANSACTION DETAILS </h1>
+<br>
+
+<form method="get" action = "addindb.php">
+  <div class="form-group">
+    <label for="user">USER NAME:</label>
+    <input type="user" class="form-control" id="user" name="user">
+  </div>
+ 
+ <!--
+   <div class="form-group">
+    <label for="credit">CREDITED AMOUNT:</label>
+    <input type="credit" class="form-control" id="credit" name="credit">
+  </div>
+  
+    <div class="form-group">
+    <label for="debit">DEBITED AMOUHNT:</label>
+    <input type="debit" class="form-control" id="debit" name="debit">
+  </div>
+  -->
+<h5>Transaction Type :</h5>
+  <div class="form-check">
+  <label class="form-check-label">
+    <input type="radio" class="form-check-input" name="debit">Debited
+  </label>
+</div>
+
+  <div class="form-check">
+  <label class="form-check-label">
+    <input type="radio" class="form-check-input" name="credit">Credited
+  </label>
+</div>
+
+<div class="form-group">
+    <label for="amount">AMOUNT:
+    <input type="number" class="form-control" id="amount" name="amount">
+  </label>
+</div>
+
+
+ <!-- 
+    <div class="form-group">
+    <label for="status">TRANSACTION STATUS</label>
+    <input type="status" class="form-control" id="status" name="status">
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+-->
+
+
+<h5>Transaction Status :</h5>
+<div class="form-check">
+  <label class="form-check-label">
+    <input type="radio" class="form-check-input" name="paid">Paid
+  </label>
+</div>
+
+<div class="form-check">
+  <label class="form-check-label">
+    <input type="radio" class="form-check-input" name="unpaid">Unpaid
+  </label>
+</div>
+
+<br>
+<div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</div>
+</form>
+
+
+	
+
+</body>
+</html>
