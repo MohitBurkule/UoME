@@ -22,6 +22,25 @@ $obj->n=$name;
 $obj->e=$email;
 $obj->p=$pwd;
 $obj->r=mt_rand(0,300);
+
+//tanay start
+$readf = new user();
+$file = fopen("db.txt", "r");
+while(!feof($file))
+{
+$result = fgets($file);
+				
+$resobj = json_decode($result);
+if(is_null($resobj))
+	  break;
+	if($resobj->r==$obj->r)
+	{
+		$obj->r=mt_rand(0,300);
+	}
+
+}
+//tanay end
+
 $jsonData = json_encode($obj);
 
 $myfile = file_put_contents('db.txt', $jsonData.PHP_EOL , FILE_APPEND | LOCK_EX); // donno bout lock_ex
