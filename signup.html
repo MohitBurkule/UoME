@@ -20,25 +20,51 @@
 <h1 class="text-centre"> Sign up </h1>
 <br>
 
-<form method="get" action = "reg.php">
+<form method="get" action = "reg.php" class="needs-validation" novalidate>
   <div class="form-group">
     <label for="name">Enter your name : </label>
-    <input type="name" class="form-control" id="name" name="name">
+    <input type="name" class="form-control" id="name" name="name" required>
+    <div class="invalid-feedback">Please fill out this field.</div>
   </div>
   <div class="form-group">
     <label for="email">Email address:</label>
-    <input type="email" class="form-control" id="email" name="email">
+    <input type="email" class="form-control" id="email" name="email" required>
+    <div class="invalid-feedback">Please fill out this field.</div>
   </div>
   <div class="form-group">
     <label for="pwd">Enter New Password:</label>
-    <input type="password" class="form-control" id="pwd"name="pwd">
+    <input type="password" class="form-control" id="pwd"name="pwd" required>
+    <div class="invalid-feedback">Please fill out this field.</div>
   </div>
   <div class="form-group">
     <label for="pwd1">Confirm New Password:</label>
-    <input type="password" class="form-control" id="pwd1">
+    <input type="password" class="form-control" id="pwd1" required>
+    <div class="invalid-feedback">Please fill out this field.</div>
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 
+
+
+<script>
+// Disable form submissions if there are invalid fields
+(function() {
+  'use strict';
+  window.addEventListener('load', function() {
+    // Get the forms we want to add validation styles to
+    var forms = document.getElementsByClassName('needs-validation');
+    // Loop over them and prevent submission
+    var validation = Array.prototype.filter.call(forms, function(form) {
+      form.addEventListener('submit', function(event) {
+        if (form.checkValidity() === false) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      }, false);
+    });
+  }, false);
+})();
+</script>
 </body>
 </html>
